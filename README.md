@@ -28,7 +28,7 @@ If you mount the share, and execute `ls`, it will seem to "empty" out the share 
 
 This is proven by the following:
 
-``sh
+```sh
 [/]% ls /mnt
  Directory of /mnt
 Total                       0 bytes
