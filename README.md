@@ -3,10 +3,10 @@ This is a guide detailing how to use 3DS microSD management on Linux.
 
 ## Getting started
 
-This is the vital command that mounts the 3DS's microSD card as a CIFS.
+This command mounts the 3DS's microSD card as a CIFS.
 
 ```sh
-sudo mount.cifs \
+$ sudo mount.cifs \
 	//$3DS_NAME/microSD\
 	-o user=$3DS_USER,\
 	password=$3DS_PASS,\
@@ -16,13 +16,14 @@ sudo mount.cifs \
 ```
 That command will successfully mount your 3DS's microSD card to `/mnt`. Please note that `sudo` is required.
 
+If the connection has been dropped (for example, the 3DS is not in microSD management), commands like `ls` will freeze.
+
+
 ## Connection loss
 
-A downside of doing this is that connection is very unstable. Even a simple `ls /mnt` will cause a the filesystem to ghost.
+A downside of doing this is that connection is very unstable. Even a simple `ls /mnt` will cause a the filesystem to "ghost".
 
-## FS ghosting
-
-If the connection has been dropped (for example, the 3DS is not in microSD management), commands like `ls` will freeze.
+## Filesystem ghosting
 
 If you mount the share, and execute `ls`, it will seem to "empty" out the share for some reason. However, files will **still be writeable.** You just can't see them.
 
