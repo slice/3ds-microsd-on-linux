@@ -12,7 +12,8 @@ $ sudo mount.cifs \
 	password=$3DS_PASS,\
 	ip=$3DS_LOCALIP,\
 	servern=$3DS_NAME,\
-	uid=$USER,gid=users,nounix /mnt
+	uid=$USER,gid=users,nounix,\
+	vers=1.0 /mnt
 ```
 That command will successfully mount your 3DS's microSD card to `/mnt`. Please note that `sudo` is required.
 
